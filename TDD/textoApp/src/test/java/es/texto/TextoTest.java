@@ -125,7 +125,7 @@ class TextoTest {
         Texto t = new Texto("12345", 5);
 
         boolean resultado = t.anadirFinal('X');
-        assertTrue(resultado, "Debe devolver false si no hay espacio para añadir al final");
+        assertFalse(resultado, "Debe devolver false si no hay espacio para añadir al final");
 
         String contenidoEsperado = "12345";
         String contenido = t.getContenido();
