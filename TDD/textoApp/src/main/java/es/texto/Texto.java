@@ -23,6 +23,9 @@ public class Texto {
 	
 	
 	public Texto(String Contenido, int maxLongitud) {
+		if(maxLongitud<=0) {
+			throw new IllegalArgumentException("maxLongitud debe ser > 0");
+		}
 		if(Contenido!=null&&Contenido.length()>maxLongitud) {
 			throw new IllegalArgumentException("contenidoInicial supera maxLongitud");
 		}
@@ -114,6 +117,10 @@ public class Texto {
 			}
 		}
 		return nvocales;
+	}
+	
+	public String toString () {
+		return contenido;
 	}
 	
 	
