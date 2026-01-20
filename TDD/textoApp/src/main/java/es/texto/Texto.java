@@ -17,7 +17,7 @@ public class Texto {
 			throw new IllegalArgumentException("maxLongitud debe ser > 0");
 		}
 		this.maxLongitud=maxLongitud;
-		this.Contenido="";
+		this.contenido="";
 	}
 	
 	
@@ -29,34 +29,36 @@ public class Texto {
 		if(Contenido==null) {
 			throw new IllegalArgumentException("contenidoInicial no puede ser null");
 		}
-		this.Contenido=Contenido;
+		this.contenido=Contenido;
 		this.maxLongitud=maxLongitud;
 	}
 
 
 
-	private String Contenido;
+	private String contenido;
 
 	private int maxLongitud;
 	
 	
 	
 	public String getContenido() {
-		return Contenido;
+		return contenido;
 	}
 
 
 	public int longitud() {
-		if(Contenido==null) {
-			
+		if(contenido==null) {
+			throw new NullPointerException("No tiene longitud un texto null");
 		}
-		return Contenido.length();
+		return contenido.length();
 	}
 	
 	public boolean anadirFinal(char c){
-		if(Contenido.length()>0&&Contenido.length()<maxLongitud) {
-			Contenido=Contenido+c;
-			System.out.println(Contenido);
+		
+		if(contenido.length()<maxLongitud) {
+			StringBuilder sb = new StringBuilder(c);
+			sb.append(c);
+			contenido=sb.toString();
 			return true;
 		}else {
 			return false;
@@ -64,27 +66,34 @@ public class Texto {
 	}
 	
 	public boolean anadirInicio(char c) {
-		if(Contenido.length()>0&&Contenido.length()<maxLongitud) {
-			Contenido=c+Contenido;
-			System.out.println(Contenido);
+		StringBuilder sb = new StringBuilder();
+		if(contenido.length()<maxLongitud) {
+			sb.append(c);
+			sb.append(contenido);
+			contenido=sb.toString();
 			return true;
 		}else {
 			return false;
 		}
 	}
 	
-	public boolean anadirInicio (String c) {
-		if(Contenido.length()<maxLongitud&&Contenido.length()+c.length()<maxLongitud) {
-			Contenido=c+Contenido;
+	public boolean anadirInicio (String cadena) {
+		if(cadena==null)
+			throw new IllegalArgumentException("cadena no puede ser null");
+			if(contenido.length()+cadena.length()<=maxLongitud) {
+			contenido=cadena+contenido;
 			return true;
 		}else {
 			return false;
 		}
 	}
 	
-	public boolean anadirFinal (String c) {
-		if(Contenido.length()<maxLongitud&&Contenido.length()+c.length()<maxLongitud) {
-			Contenido=Contenido+c;
+	public boolean anadirFinal (String cadena) {
+		if(cadena==null) {
+			throw new IllegalArgumentException("cadena no puede ser null");
+		}
+		if(contenido.length()+cadena.length()<=maxLongitud) {
+			contenido=contenido+cadena;
 			return true;
 		}else {
 			return false;
@@ -92,13 +101,22 @@ public class Texto {
 	}
 	
 	public int contarVocales() {
-		char [] vocales = {'a','e','i','o','u','A','E','I','O','U'};
-		
-		
-		
+		int nvocales=0;
+		char [] vocales = {'a','e','i','o','u','A','E','I','O','U','á','é','í','ó','ú','Á','É','Ó','Í','Ú'};
+		for(int i=0;i<contenido.length();i++) {
+			char c = contenido.charAt(i);
+			
+			for(int j=0;j<vocales.length;j++) {
+				if(c==vocales[j]) {
+					nvocales++;
+					break;
+				}
+			}
+		}
+		return nvocales;
 	}
 	
 	
 	
+	
 }
-
