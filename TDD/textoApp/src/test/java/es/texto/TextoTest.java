@@ -61,7 +61,7 @@ class TextoTest {
         String resultado = t.getContenido();
         assertEquals(resultadoEsperado, resultado, "Debe mantener el contenido inicial");
 
-        int longitudEsperada = 4;
+        int longitudEsperada = 4; //Se refiere a los caracteres de "Hola"
         int longitud = t.longitud();
         assertEquals(longitudEsperada, longitud, "La longitud debe coincidir con el contenido inicial");
     }
@@ -124,9 +124,8 @@ class TextoTest {
     void anadirFinal_char_sinEspacio_devuelveFalse() {
         Texto t = new Texto("12345", 5);
 
-        boolean resultadoEsperado = false;
         boolean resultado = t.anadirFinal('X');
-        assertEquals(resultadoEsperado, resultado, "Debe devolver false si no hay espacio para añadir al final");
+        assertFalse(resultado, "Debe devolver false si no hay espacio para añadir al final");
 
         String contenidoEsperado = "12345";
         String contenido = t.getContenido();
