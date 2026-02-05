@@ -31,5 +31,10 @@ public class Hora12 extends Hora{
 		return String.format("%02d:%02d",hora,minutos)+periodo;
 	}
 	
+	public boolean setHora(int valor) {
+		
+		
+	}
+	
 	
 }

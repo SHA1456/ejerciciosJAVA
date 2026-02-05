@@ -13,7 +13,7 @@ class Hora12Test {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		
 	}
 
 }
