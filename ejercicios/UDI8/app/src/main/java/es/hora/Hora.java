@@ -35,18 +35,15 @@ public class Hora {
 		}
 	}
 	
-	public void incrementar (int minutos) {
-		if(this.minutos+minutos>59) {
-			this.minutos=0;
-			this.hora=this.hora+1;
-			if(hora>=24) {
-				this.hora=0;
-				this.minutos=0;
+	public void inc() {
+		this.minutos++;
+		if(this.minutos == 60) {
+			this.minutos = 0;
+			this.hora++;
+			if(this.hora == 24) {
+				this.minutos = 0;
+				this.hora = 0;
 			}
-		}else if(minutos<0) {
-			throw new IllegalArgumentException("No se puede incrementar con números negativos");
-		}else {
-		this.minutos=this.minutos+minutos;
 		}
 	}
 	
