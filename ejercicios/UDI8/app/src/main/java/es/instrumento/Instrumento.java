@@ -1,25 +1,23 @@
 package es.instrumento;
 
 public abstract class Instrumento {
-
-	protected int Max=100;
 	
-	protected int numNotas;
+	final int MAX=100;
 	
 	protected Notas[] melodia; 
 	
-	public void interpretar() {
-		melodia.toString();
+	public abstract void interpretar() {
+		
 	}
 	
-	public boolean add(Notas nota) {
-		if(numNotas>Max) {
-			return false;
-		}else {
-			melodia[numNotas]=nota;
-			numNotas++;
-			return true;
-		}
+	public boolean add (Notas nota) {
+		
+		
+		
+	}
+	
+	public Instrumento () {
+		
 	}
 	
 	
