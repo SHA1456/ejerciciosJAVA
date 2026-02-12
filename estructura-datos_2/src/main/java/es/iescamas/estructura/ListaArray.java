@@ -62,6 +62,10 @@ public class ListaArray {
 	}
 	
 	public int indexOf(Integer n) {
+		if(n<0||n>=numElementos) {
+			throw new IllegalArgumentException("Fuera de rango");
+		}
+		
 		for (int i = 0; i < numElementos; i++) {
             if (tabla[i].equals(n)) {
                 return i;
