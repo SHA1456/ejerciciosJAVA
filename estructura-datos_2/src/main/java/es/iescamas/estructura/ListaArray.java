@@ -29,9 +29,15 @@ public class ListaArray {
 		
 	}
 	
+	@Override
 	public String toString() {
-		return Arrays.toString(tabla);
+		Integer[] tabla_a_imprimir = new Integer[numElementos];
+		for(int i=0; i<numElementos; i++) {
+			tabla_a_imprimir[i] = tabla[i];
+		}
+		return Arrays.toString(tabla_a_imprimir);
 	}
+	
 	
 	public Integer remove (int index) {
 	
