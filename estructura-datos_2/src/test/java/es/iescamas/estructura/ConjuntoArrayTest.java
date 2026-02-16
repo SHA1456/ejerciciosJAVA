@@ -14,7 +14,17 @@ class ConjuntoArrayTest {
 	}
 
 	@Test
-	void test() {
+	void testAdd() {
+		
+		assertTrue(conjunto.add(3));
+		assertFalse(conjunto.add(3));
+		
+	}
+	
+	@Test
+	void testContains() {
+		
+		
 		
 	}
 
