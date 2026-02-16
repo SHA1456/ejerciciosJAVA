@@ -7,9 +7,10 @@ import org.junit.jupiter.api.Test;
 
 class ConjuntoArrayTest {
 
+	ConjuntoArray conjunto;
 	@BeforeEach
 	void setUp() throws Exception {
-		
+		conjunto = new ConjuntoArray();
 	}
 
 	@Test
