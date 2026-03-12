@@ -11,7 +11,7 @@ public class Main {
 		c1.mostrar();
 		c2.mostrar();
 		p1.mostrar();
-	*/
+		*/
 		Reproductor rep = new Reproductor(c1);
 		/*
 		c1.play();
