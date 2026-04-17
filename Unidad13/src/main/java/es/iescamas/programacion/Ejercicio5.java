@@ -7,10 +7,10 @@ public class Ejercicio5 {
 	public static void main(String[] args) {
 		List<Integer> numeros = List.of(2,4,5,6,7,8,9,15,34,68,24,80);
 
+		int mayores = numeros.stream().filter(n->n>10).toList();
 		
 		
 		
-		//System.out.println(mayores);
 	}
 
 }
